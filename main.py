@@ -56,16 +56,18 @@ def validation():
     spaceinusnresult =""
     if vusern == "" or vpswd == "" or vvpswd == "":
         generalresult = "enter values" 
-    elif " " in vusern  or " "  in vpswd:
+    if " " in vusern  or " "  in vpswd:
         spaceinusnresult = "No space allowed in user name and in password"    
-    elif len(vusern) < 3 or len(vusern) > 20 :
+    if len(vusern) < 3 or len(vusern) > 20 :
         usernameresult = "enter values more than 3 and less than 20"
-    elif len(vpswd) <3 or len(vpswd) > 20:
+    if len(vpswd) <3 or len(vpswd) > 20:
         passwordresult = "enter values more than 3 and less than 20"
-    elif vpswd != vvpswd:
+    if vpswd != vvpswd:
         veripasswordresult = "does not match" 
-    elif  "@" not in vemailid or "." not in vemailid:
+    if  "@" not in vemailid or "." not in vemailid:
         veriemailresult = "Invalid email id" 
+    if vemailid =="":
+        veriemailresult =""    
     if generalresult == "" and usernameresult =="" and passwordresult=="" and veripasswordresult=="" and veriemailresult=="" and spaceinusnresult=="":
         hellostr = "Hello"
         return "<h1>" + hellostr + " " + vusern + "</h1>"
